@@ -1,0 +1,15 @@
+#!/bin/bash -e
+
+# Formerly installed /usr/local (major speed hack):
+(
+    cd /usr/local
+    if [[ -d .git ]]; then
+        git pull origin master
+    else
+        sudo chown -R stackato.stackato .
+        git clone git@github.com:ouicode/stackato-pairup-usr-local.git
+        mv stackato-pairup-usr-local/.git .
+        rm -fr stackato-pairup-usr-local
+        git reset --hard
+    fi
+)
