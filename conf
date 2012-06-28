@@ -4,14 +4,14 @@ function pairup_setup {
     pairup_ssh_config
     pairup_dots_install
     pairup_touch_sudo
-#    pairup_apt_get BASE
+    pairup_apt_get BASE
 #    pairup_apt_get RKING
-    pairup_apt_get ALL
-    pairup_man_db
-    pairup_usr_local
-    pairup_git_repos
-#     pairup_git_repos ACMEISM
-    pairup_vim_boot
+#    pairup_apt_get ALL
+#    pairup_man_db
+#    pairup_usr_local
+#    pairup_git_repos
+    pairup_git_repos ACMEISM
+#    pairup_vim_boot
 }
 
 ##
@@ -42,17 +42,17 @@ dots:
 - repo: git@github.com:sharpsaw/sharp-dots.git
 - repo: git@github.com:ouicode/pairup-dots.git
 - repo: git@github.com:sharpsaw/sane-dots.git
-- repo: git@github.com:sharpsaw/1337-dots.git
+#- repo: git@github.com:sharpsaw/1337-dots.git
 - repo: git@github.com:sharpsaw/vim-dots.git
-- repo: git@github.com:sharpsaw/ruby-dots.git
+#- repo: git@github.com:sharpsaw/ruby-dots.git
 - repo: git@github.com:sharpsaw/perl-dots.git
 - repo: git@github.com:sharpsaw/linux-dots.git
-- repo: git@github.com:olivierverdier/zsh-git-prompt.git
+#- repo: git@github.com:olivierverdier/zsh-git-prompt.git
 - repo: git@github.com:sharpsaw/git-dots.git
 - repo: git@github.com:ingydotnet/ingy-dots_.git
-- repo: git@github.com:ryanjosephking/rking-dots.git
-- repo: git@github.com:trapd00r/ls--.git
-- repo: git@github.com:rking/zu.git
+#- repo: git@github.com:ryanjosephking/rking-dots.git
+#- repo: git@github.com:trapd00r/ls--.git
+#- repo: git@github.com:rking/zu.git
 "
 
 export PAIRUP_APT_GET_BASE="
