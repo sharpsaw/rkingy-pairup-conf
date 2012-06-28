@@ -36,7 +36,7 @@ git@github.com:ingydotnet/pegex-json-pm.git
 export PAIRUP_DOTDOTDOT_REPO=git@github.com:ingydotnet/....git
 
 # .../conf contents
-export PAIRUP_DOTS_CONF="
+read -r -d '' PAIRUP_DOTS_CONF <<'...' || true
 dots:
 - repo: git@github.com:sharpsaw/loop-dots.git
 - repo: git@github.com:sharpsaw/sharp-dots.git
@@ -53,7 +53,8 @@ dots:
 - repo: git@github.com:ryanjosephking/rking-dots.git
 - repo: git@github.com:trapd00r/ls--.git
 - repo: git@github.com:rking/zu.git
-"
+...
+export PAIRUP_DOTS_CONF
 
 export PAIRUP_APT_GET_BASE="
 aptitude
