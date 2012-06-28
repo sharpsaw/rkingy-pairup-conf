@@ -23,20 +23,20 @@ export PAIRUP_GIT_REPOS='
 git@github.com:ingydotnet/pairup.git
 '
 
-export PAIRUP_GIT_REPOS_ACMEISM='
+export PAIRUP_GIT_REPOS_ACMEISM="\
 git@github.com:ingydotnet/cdent.git
 git@github.com:ingydotnet/pegex-pm.git
 git@github.com:ingydotnet/testml-pm.git
 git@github.com:ingydotnet/pegex-pgx.git
 git@github.com:ingydotnet/json-pgx.git
 git@github.com:ingydotnet/pegex-json-pm.git
-'
+"
 
 # ... source repo
 export PAIRUP_DOTDOTDOT_REPO=git@github.com:ingydotnet/....git
 
 # .../conf contents
-read -r -d '' PAIRUP_DOTS_CONF <<'...' || true
+export PAIRUP_DOTS_CONF="\
 dots:
 - repo: git@github.com:sharpsaw/loop-dots.git
 - repo: git@github.com:sharpsaw/sharp-dots.git
@@ -53,8 +53,7 @@ dots:
 - repo: git@github.com:ryanjosephking/rking-dots.git
 - repo: git@github.com:trapd00r/ls--.git
 - repo: git@github.com:rking/zu.git
-...
-export PAIRUP_DOTS_CONF
+"
 
 export PAIRUP_APT_GET_BASE="
 aptitude
