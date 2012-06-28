@@ -1,21 +1,41 @@
+# This is the top level set of setup actions
 function pairup_setup {
     pairup_known_hosts
     pairup_ssh_config
     pairup_dots_install
     pairup_touch_sudo
-    pairup_apt_get
+#    pairup_apt_get BASE
+#    pairup_apt_get RKING
+    pairup_apt_get ALL
     pairup_man_db
     pairup_usr_local
     pairup_git_repos
+#     pairup_git_repos ACMEISM
     pairup_vim_boot
 }
 
+##
+# The rest of this file is variables:
+##
+
+# Git repos to clone
 export PAIRUP_GIT_REPOS='
-git@github.com:pairup/pairup.git
+git@github.com:ingydotnet/pairup.git
 '
 
+export PAIRUP_GIT_REPOS_ACMEISM='
+git@github.com:ingydotnet/cdent.git
+git@github.com:ingydotnet/pegex-pm.git
+git@github.com:ingydotnet/testml-pm.git
+git@github.com:ingydotnet/pegex-pgx.git
+git@github.com:ingydotnet/json-pgx.git
+git@github.com:ingydotnet/pegex-json-pm.git
+'
+
+# ... source repo
 export PAIRUP_DOTDOTDOT_REPO=git@github.com:ingydotnet/....git
 
+# .../conf contents
 export PAIRUP_DOTS_CONF="
 dots:
 - repo: git@github.com:sharpsaw/loop-dots.git
@@ -35,46 +55,54 @@ dots:
 - repo: git@github.com:rking/zu.git
 "
 
-export PAIRUP_DEB_PKGS="
+export PAIRUP_APT_GET_BASE="
 aptitude
-    elinks
-    elinks-data
 groff
 groff-base
-    imagemagick
-    inotify-tools
-    libcap2-bin
-    libcdt4
-    libdjvulibre-text
-    libdjvulibre21
-    libgraph4
-    libgvc5
-    libilmbase6
-    libinotifytools0
-    liblua50
-    liblualib50
-    libmagickcore3-extra
-    libnetpbm10
 libnet-ssleay-perl
-    libopenexr6
-    libpathplan4
 libperl5.10
 libpipeline1
-    libwmf0.2-7
 links
-    lxc
-    lxcguest
-    mlocate
-    netpbm
 perl-doc
-    pinfo
-    psutils
-    sl
 strace
 uuid-dev
 weechat-plugins
 weechat-scripts
-    zsh
+"
+
+export PAIRUP_APT_GET_RKING="
+elinks
+elinks-data
+imagemagick
+inotify-tools
+libcap2-bin
+libcdt4
+libdjvulibre-text
+libdjvulibre21
+libgraph4
+libgvc5
+libilmbase6
+libinotifytools0
+liblua50
+liblualib50
+libmagickcore3-extra
+libnetpbm10
+libopenexr6
+libpathplan4
+libwmf0.2-7
+lxc
+lxcguest
+mlocate
+netpbm
+pinfo
+psutils
+sl
+zsh
+"
+
+export PAIRUP_APT_GET_ALL="
+$PAIRUP_APT_GET_BASE
+$PAIRUP_APT_GET_RKING
 "
 
 export PAIRUP_SSH_CONFIG="
