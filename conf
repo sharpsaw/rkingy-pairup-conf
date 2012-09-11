@@ -1,17 +1,14 @@
 # This is the top level set of setup actions
 function pairup_setup {
+    pairup_apt_get
     pairup_known_hosts
     pairup_ssh_config
     pairup_dots_install
     pairup_touch_sudo
-#    pairup_apt_get BASE
-#    pairup_apt_get RKING
-    pairup_apt_get ALL
     pairup_man_db
     pairup_usr_local
     pairup_git_repos
-    pairup_git_repos ACMEISM
-#    pairup_vim_boot
+    pairup_vim_boot
 }
 
 ##
@@ -19,18 +16,9 @@ function pairup_setup {
 ##
 
 # Git repos to clone
-export PAIRUP_APT_GET='
+export PAIRUP_GIT_REPOS='
 git@github.com:ingydotnet/pairup.git
 '
-
-export PAIRUP_APT_GET_ACMEISM="\
-git@github.com:ingydotnet/cdent.git
-git@github.com:ingydotnet/pegex-pm.git
-git@github.com:ingydotnet/testml-pm.git
-git@github.com:ingydotnet/pegex-pgx.git
-git@github.com:ingydotnet/json-pgx.git
-git@github.com:ingydotnet/pegex-json-pm.git
-"
 
 # ... source repo
 export PAIRUP_DOTDOTDOT_REPO=git@github.com:ingydotnet/....git
@@ -50,59 +38,33 @@ dots:
 - repo: git@github.com:olivierverdier/zsh-git-prompt.git
 - repo: git@github.com:sharpsaw/git-dots.git
 - repo: git@github.com:ingydotnet/ingy-dots_.git
-- repo: git@github.com:ryanjosephking/rking-dots.git
 - repo: git@github.com:trapd00r/ls--.git
-- repo: git@github.com:rking/zu.git
+- repo: git@github.com:exad/zu.git
+
+install_method: symlink
 "
 
-export PAIRUP_APT_GET_BASE="
+export PAIRUP_APT_GET="
 aptitude
+elinks
+elinks-data
+exuberant-ctags
 groff
 groff-base
 libnet-ssleay-perl
-libperl5.10
 libpipeline1
 links
+mlocate
+netpbm
 perl-doc
+pinfo
+psutils
+sl
 strace
 uuid-dev
 weechat-plugins
 weechat-scripts
-"
-
-export PAIRUP_APT_GET_RKING="
-elinks
-elinks-data
-imagemagick
-inotify-tools
-libcap2-bin
-libcdt4
-libdjvulibre-text
-libdjvulibre21
-libgraph4
-libgvc5
-libilmbase6
-libinotifytools0
-liblua50
-liblualib50
-libmagickcore3-extra
-libnetpbm10
-libopenexr6
-libpathplan4
-libwmf0.2-7
-lxc
-lxcguest
-mlocate
-netpbm
-pinfo
-psutils
-sl
 zsh
-"
-
-export PAIRUP_APT_GET_ALL="
-$PAIRUP_APT_GET_BASE
-$PAIRUP_APT_GET_RKING
 "
 
 export PAIRUP_SSH_CONFIG="
